@@ -1,14 +1,6 @@
 <script lang="ts">
-import { goto } from "$app/navigation";
-
-	import { user } from "$lib/userstore";
-	// We'll store the token in here and decode it into
-	// the various components later
-	type User = {
-		username: string;
-		token: string;
-	};
-
+	import { goto } from '$app/navigation';
+	import { user } from '$lib/userstore';
 	let username: string;
 	let password: string;
 
@@ -20,17 +12,17 @@ import { goto } from "$app/navigation";
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				action: "signin",
+				action: 'signin',
 				username: username,
 				password: password
 			})
 		});
-        if(res.status == 200){
-            $user = await res.json();
-			goto("/");
-        } else {
-            alert(await res.text());
-        }
+		if (res.status == 200) {
+			$user = await res.json();
+			goto('/');
+		} else {
+			alert(await res.text());
+		}
 	}
 </script>
 
@@ -50,7 +42,7 @@ import { goto } from "$app/navigation";
 <style>
 	.login {
 		padding-bottom: 3rem;
-		background-color: #FFFFFF;
+		background-color: #ffffff;
 		width: 75%;
 		max-width: var(--column-width);
 		margin: var(--column-margin-top) auto 0 auto;
@@ -84,5 +76,4 @@ import { goto } from "$app/navigation";
 		border-radius: 8px;
 		text-align: center;
 	}
-
 </style>
