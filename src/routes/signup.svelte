@@ -10,7 +10,6 @@ import { goto } from "$app/navigation";
 		token: string;
 	};
 
-	let user: User;
 	let username: string;
 	let password: string;
 
