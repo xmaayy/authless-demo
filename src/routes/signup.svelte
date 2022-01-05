@@ -40,7 +40,7 @@ import { goto } from "$app/navigation";
 	<title>Login Page</title>
 </svelte:head>
 
-<div class="todos">
+<div class="login">
 	<h1>Sign Up</h1>
 	<div class="new">
 		<input name="text" placeholder="Username" bind:value={username} /><br />
@@ -50,19 +50,25 @@ import { goto } from "$app/navigation";
 </div>
 
 <style>
-	.todos {
-		width: 100%;
+	.login {
+		padding-bottom: 3rem;
+		background-color: #FFFFFF;
+		width: 75%;
 		max-width: var(--column-width);
 		margin: var(--column-margin-top) auto 0 auto;
 		line-height: 1;
+		border-radius: 20px;
+		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 	}
 
 	.new {
-		margin: 0 0 0.5rem 0;
+		margin: auto;
+		width: 50%;
 	}
 
 	input {
-		border: 1px solid transparent;
+		border: 1px solid black;
+		margin-bottom: 1rem;
 	}
 
 	input:focus-visible {

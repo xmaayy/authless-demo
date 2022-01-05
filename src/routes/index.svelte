@@ -1,5 +1,10 @@
 <script lang="ts">
 	import { user } from '$lib/userstore';
+	import jwt_decode from "jwt-decode";
+	let token_values = {};
+	if ($user.token != null){
+		let token_values = jwt_decode($user.token) as object;
+	}
 </script>
 
 <svelte:head>
@@ -22,9 +27,14 @@
 		{/if}
 	</h1>
 	<div class="token">
-		{#if $user.username != null}
+		{#if $user.username != null && token_values != {}}
 			Your user token is:<br />
-			{$user.token}
+			{#each Object.entries(token_values) as v}
+				{v[0]} : {v[1]} <br />
+			{/each}
+			{#each $user.token.split(".") as fragment}
+				{fragment} <br/>
+			{/each}
 		{/if}
 	</div>
 	<div class="content token">
