@@ -28,7 +28,7 @@ import { goto } from "$app/navigation";
 			})
 		});
         if(res.status == 200){
-            console.log(await res.json());
+            $user = await res.json();
 			goto("/");
         } else {
             alert(await res.text());
