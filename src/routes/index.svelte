@@ -17,7 +17,7 @@
 			</div>
 			Logged in as:
 			{$user.username} <br />
-		{:else}
+		{:else} 
 			Go Log In (look in the header)
 		{/if}
 	</h1>
